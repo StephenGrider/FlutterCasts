@@ -1,1 +1,3 @@
-class Terminal {}
+class Terminal {
+  void printPrompt(String prompt) {}
+}
