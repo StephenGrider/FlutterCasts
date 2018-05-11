@@ -10,6 +10,10 @@ class Prompter {
 
     final input = _terminal.collectInput();
 
-    return options[int.parse(input)].value;
+    try {
+      return options[int.parse(input)].value;
+    } catch (err) {
+      return ask(prompt, options);
+    }
   }
 }
