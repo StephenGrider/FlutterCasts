@@ -8,5 +8,6 @@ void main() {
   ];
 
   final prompter = new Prompter();
+  prompter.askBinary('alksjdlaksjdf');
   print(prompter.askBinary('Do you like dart'));
 }
