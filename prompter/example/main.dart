@@ -1,5 +1,4 @@
-import 'package:prompter_sg/src/option.dart';
-import 'package:prompter_sg/src/prompter.dart';
+import 'package:prompter_sg/prompter_sg.dart';
 
 void main() {
   final options = [
