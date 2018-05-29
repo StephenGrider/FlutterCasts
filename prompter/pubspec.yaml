@@ -1,8 +1,0 @@
-name: prompter_sg
-version: 0.0.2
-description: Library to create CLI wizards
-author: Stephen Grider <ste.grider@gmail.com>
-homepage: https://www.google.com
-
-environment:
-  sdk: '<3.0.0'
