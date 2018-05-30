@@ -4,7 +4,7 @@ void main() {
   var app = MaterialApp(
     home: Scaffold(
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.clear),
+        child: Icon(Icons.add),
         onPressed: () {
           print('Hi there!');
         },
