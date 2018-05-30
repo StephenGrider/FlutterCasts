@@ -3,7 +3,12 @@
 import 'package:flutter/material.dart';
 
 // Define a main function
+void main() {
+  // Create a widget that will show some text on the screen
+  var app = MaterialApp(
+    home: Text('Hi there!'),
+  );
 
-// Create a widget that will show some text on the screen
-
-// Show that widget on the screen of the device
+  // Show that widget on the screen of the device
+  runApp(app);
+}
