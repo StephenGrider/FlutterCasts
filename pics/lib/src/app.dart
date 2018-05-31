@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
-// THIS IS THE WRONG WAY OF DOING THINGS!!!!
+class App extends StatefulWidget {
+  createState() {
+    return AppState();
+  }
+}
 
-class App extends StatelessWidget {
+class AppState extends State<App> {
   int counter = 0;
 
   Widget build(context) {
@@ -12,7 +16,9 @@ class App extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: () {
-            counter += 1;
+            setState(() {
+              counter += 1;
+            });
           },
         ),
         appBar: AppBar(
