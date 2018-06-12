@@ -24,12 +24,19 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
     );
   }
 
+  onTap() {
+    catController.forward();
+  }
+
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Animation!'),
       ),
-      body: buildAnimation(),
+      body: GestureDetector(
+        child: buildAnimation(),
+        onTap: onTap,
+      ),
     );
   }
 
@@ -39,7 +46,7 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
       builder: (context, child) {
         return Container(
           child: child,
-          margin: EdgeInsets.only(bottom: catAnimation.value),
+          margin: EdgeInsets.only(top: catAnimation.value),
         );
       },
       child: Cat(),
