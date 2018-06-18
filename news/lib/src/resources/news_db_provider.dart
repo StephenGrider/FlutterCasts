@@ -45,7 +45,9 @@ class NewsDbProvider {
       whereArgs: [id],
     );
 
-    if (maps.length > 0) {}
+    if (maps.length > 0) {
+      return ItemModel.fromDb(maps.first);
+    }
 
     return null;
   }
