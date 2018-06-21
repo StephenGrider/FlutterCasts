@@ -33,15 +33,22 @@ class NewsListTile extends StatelessWidget {
   }
 
   Widget buildTile(ItemModel item) {
-    return ListTile(
-      title: Text(item.title),
-      subtitle: Text('${item.score} points'),
-      trailing: Column(
-        children: [
-          Icon(Icons.comment),
-          Text('${item.descendants}'),
-        ],
-      ),
+    return Column(
+      children: [
+        ListTile(
+          title: Text(item.title),
+          subtitle: Text('${item.score} points'),
+          trailing: Column(
+            children: [
+              Icon(Icons.comment),
+              Text('${item.descendants}'),
+            ],
+          ),
+        ),
+        Divider(
+          height: 8.0,
+        ),
+      ],
     );
   }
 }
