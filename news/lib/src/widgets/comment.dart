@@ -23,6 +23,10 @@ class Comment extends StatelessWidget {
           ListTile(
             title: Text(item.text),
             subtitle: item.by == "" ? Text("Deleted") : Text(item.by),
+            contentPadding: EdgeInsets.only(
+              right: 16.0,
+              left: (depth + 1) * 16.0,
+            ),
           ),
           Divider(),
         ];
