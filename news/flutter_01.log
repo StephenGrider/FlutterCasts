@@ -1,0 +1,140 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter test
+
+## exception
+
+NoSuchMethodError: NoSuchMethodError: The method 'shutdown' was called on null.
+Receiver: null
+Tried calling: shutdown()
+
+```
+#0      Object.noSuchMethod (dart:core-patch/dart:core/object_patch.dart:46)
+#1      _Compiler.shutdown (package:flutter_tools/src/test/flutter_platform.dart:288)
+<asynchronous suspension>
+#2      _FlutterPlatform.close (package:flutter_tools/src/test/flutter_platform.dart:745)
+<asynchronous suspension>
+#3      Loader.close.<anonymous closure>.<anonymous closure> (package:test/src/runner/loader.dart:308)
+<asynchronous suspension>
+#4      MappedIterator.moveNext (dart:_internal/iterable.dart:392)
+#5      Future.wait (dart:async/future.dart:385)
+#6      Loader.close.<anonymous closure> (package:test/src/runner/loader.dart:306)
+<asynchronous suspension>
+#7      new Future.sync (dart:async/future.dart:222)
+#8      AsyncMemoizer.runOnce (package:async/src/async_memoizer.dart:43)
+#9      Loader.close (package:test/src/runner/loader.dart:304)
+#10     Runner.close.<anonymous closure> (package:test/src/runner.dart:210)
+<asynchronous suspension>
+#11     new Future.sync (dart:async/future.dart:222)
+#12     AsyncMemoizer.runOnce (package:async/src/async_memoizer.dart:43)
+#13     Runner.close (package:test/src/runner.dart:182)
+#14     main.close (package:test/src/executable.dart:164)
+<asynchronous suspension>
+#15     main (package:test/src/executable.dart:189)
+<asynchronous suspension>
+#16     runTests (package:flutter_tools/src/test/runner.dart:108)
+<asynchronous suspension>
+#17     TestCommand.runCommand (package:flutter_tools/src/commands/test.dart:216)
+<asynchronous suspension>
+#18     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:344)
+<asynchronous suspension>
+#19     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:279)
+<asynchronous suspension>
+#20     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142)
+<asynchronous suspension>
+#21     _rootRun (dart:async/zone.dart:1126)
+#22     _CustomZone.run (dart:async/zone.dart:1023)
+#23     runZoned (dart:async/zone.dart:1501)
+#24     AppContext.run (package:flutter_tools/src/base/context.dart:141)
+<asynchronous suspension>
+#25     FlutterCommand.run (package:flutter_tools/src/runner/flutter_command.dart:270)
+#26     CommandRunner.runCommand (package:args/command_runner.dart:194)
+<asynchronous suspension>
+#27     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:309)
+<asynchronous suspension>
+#28     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142)
+<asynchronous suspension>
+#29     _rootRun (dart:async/zone.dart:1126)
+#30     _CustomZone.run (dart:async/zone.dart:1023)
+#31     runZoned (dart:async/zone.dart:1501)
+#32     AppContext.run (package:flutter_tools/src/base/context.dart:141)
+<asynchronous suspension>
+#33     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:265)
+<asynchronous suspension>
+#34     CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:109)
+#35     new Future.sync (dart:async/future.dart:222)
+#36     CommandRunner.run (package:args/command_runner.dart:109)
+#37     FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:174)
+#38     run.<anonymous closure> (package:flutter_tools/runner.dart:59)
+<asynchronous suspension>
+#39     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142)
+<asynchronous suspension>
+#40     _rootRun (dart:async/zone.dart:1126)
+#41     _CustomZone.run (dart:async/zone.dart:1023)
+#42     runZoned (dart:async/zone.dart:1501)
+#43     AppContext.run (package:flutter_tools/src/base/context.dart:141)
+<asynchronous suspension>
+#44     runInContext (package:flutter_tools/src/context_runner.dart:43)
+<asynchronous suspension>
+#45     run (package:flutter_tools/runner.dart:50)
+#46     main (package:flutter_tools/executable.dart:49)
+<asynchronous suspension>
+#47     main (file:///Users/stephengrider/workspace/flutter/packages/flutter_tools/bin/flutter_tools.dart:8)
+#48     _startIsolate.<anonymous closure> (dart:isolate-patch/dart:isolate/isolate_patch.dart:277)
+#49     _RawReceivePortImpl._handleMessage (dart:isolate-patch/dart:isolate/isolate_patch.dart:165)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, v0.5.1, on Mac OS X 10.13.4 17E199, locale en-US)
+    • Flutter version 0.5.1 at /Users/stephengrider/workspace/flutter
+    • Framework revision c7ea3ca377 (3 weeks ago), 2018-05-29 21:07:33 +0200
+    • Engine revision 1ed25ca7b7
+    • Dart version 2.0.0-dev.58.0.flutter-f981f09760
+
+[✓] Android toolchain - develop for Android devices (Android SDK 27.0.3)
+    • Android SDK at /Users/stephengrider/Library/Android/sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-27, build-tools 27.0.3
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b01)
+    • All Android licenses accepted.
+
+[!] iOS toolchain - develop for iOS devices
+    ✗ Xcode installation is incomplete; a full installation is necessary for iOS development.
+      Download at: https://developer.apple.com/xcode/download/
+      Or install Xcode via the App Store.
+      Once installed, run:
+        sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+    ✗ libimobiledevice and ideviceinstaller are not installed. To install, run:
+        brew install --HEAD libimobiledevice
+        brew install ideviceinstaller
+    ✗ ios-deploy not installed. To install:
+        brew install ios-deploy
+    ✗ CocoaPods not installed.
+        CocoaPods is used to retrieve the iOS platform side's plugin code that responds to your plugin usage on the Dart side.
+        Without resolving iOS dependencies with CocoaPods, plugins will not work on iOS.
+        For more info, see https://flutter.io/platform-plugins
+      To install:
+        brew install cocoapods
+        pod setup
+
+[✓] Android Studio (version 3.1)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b01)
+
+[!] VS Code (version 1.24.1)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension not installed; install from
+      https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+[✓] Connected devices (1 available)
+    • Android SDK built for x86 64 • emulator-5554 • android-x64 • Android 7.0 (API 24) (emulator)
+
+! Doctor found issues in 2 categories.
+```
