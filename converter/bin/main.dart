@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:prompter_sg/prompter_sg.dart';
+import 'package:converter/src/converter.dart';
 
 void main() {
   final prompter = new Prompter();
@@ -10,7 +11,15 @@ void main() {
   }
 
   final format = prompter.askMultiple('Select format:', buildFormatOptions());
-  prompter.askMultiple('Select an image to convert:', buildFileOptions());
+  final selectedFile =
+      prompter.askMultiple('Select an image to convert:', buildFileOptions());
+  final newPath = convertImage(selectedFile, format);
+
+  final shouldOpen = prompter.askBinary('Open the image?');
+
+  if (shouldOpen) {
+    Process.run('open', [newPath]);
+  }
 }
 
 List<Option> buildFormatOptions() {
